@@ -59,17 +59,21 @@ html {
 
 .navigation {
   background-color: var(--color-grey-dark-1);
-  flex: 0 0 18%; }
+  flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .hotel-view {
   background-color: var(--color-white);
-  flex: 1; }
+  flex: 1;
+  height: 80rem; }
 
 /*LOGO*/
 .logo {
   height: 3.25rem;
   width: auto;
-  padding-left: 5rem; }
+  padding-left: 3rem; }
 
 /*SEARCH*/
 .search {
@@ -111,33 +115,67 @@ html {
 .user-nav {
   display: flex;
   align-self: stretch;
-  align-items: center;
-  padding-right: 5rem; }
+  align-items: center; }
   .user-nav > * {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
     cursor: pointer;
-    height: 100%; }
+    height: 100%;
+    display: flex;
+    align-items: center; }
   .user-nav > *:hover {
     background-color: var(--color-grey-light-2); }
   .user-nav__icon-box {
-    display: flex;
-    align-items: center; }
+    position: relative; }
   .user-nav__icon {
     height: 2.25rem;
     width: 2.25rem;
     fill: var(--color-grey-dark-2); }
   .user-nav__notification {
-    height: 5rem;
-    width: 5rem;
-    border-radius: 50%;
-    border: 1px solid var(--color-primary);
+    font-size: .8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 10rem;
     background-color: var(--color-primary);
-    padding: 0.5rem;
-    color: var(--color-white); }
-  .user-nav__user {
+    color: var(--color-white);
+    position: absolute;
+    top: 1.75rem;
+    left: 2.5rem;
     display: flex;
+    justify-content: center;
     align-items: center; }
+  .user-nav__user {
+    padding-right: 3rem; }
   .user-nav__user-photo {
     height: 3.75rem;
-    border-radius: 50%;
-    border: 1px solid var(--color-grey-light-2); }
+    border-radius: 10rem;
+    border: 1px solid var(--color-grey-light-2);
+    margin: 0 .5rem; }
+
+/*NAVIGATION*/
+.navigation-nav {
+  list-style: none;
+  margin-top: 3.5rem; }
+  .navigation-nav__link:link, .navigation-nav__link:visited {
+    text-decoration: none;
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    transition: all .2s; }
+    .navigation-nav__link:link:hover, .navigation-nav__link:visited:hover {
+      background-color: var(--color-primary); }
+  .navigation-nav__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--color-grey-light-1);
+    margin-right: 2.5rem; }
+  .navigation-nav__text {
+    text-transform: uppercase;
+    color: var(--color-grey-light-1);
+    font-size: 1.5rem; }
+
+/*LEGAL*/
+.legal {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--color-grey-light-4); }
