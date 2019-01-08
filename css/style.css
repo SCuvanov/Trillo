@@ -168,10 +168,12 @@ html {
     width: 3px;
     background-color: var(--color-primary);
     transform: scaleY(0);
-    transition: transform 0.2s, width 0.3s cubic-bezier(1, 0, 0, 1) 0.2s; }
-  .navigation-nav__item:hover::before {
+    transition: transform 0.2s, width 0.3s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s; }
+  .navigation-nav__item:hover::before, .navigation-nav__item--active::before {
     transform: scaleY(1);
     width: 100%; }
+  .navigation-nav__item:active::before {
+    background-color: var(--color-primary-light); }
   .navigation-nav__link:link, .navigation-nav__link:visited {
     text-decoration: none;
     padding: 1rem 3rem;
@@ -196,3 +198,10 @@ html {
   text-align: center;
   padding: 2.5rem;
   color: var(--color-grey-light-4); }
+
+/*GALLERY*/
+.gallery {
+  display: flex; }
+  .gallery__photo {
+    width: 100%;
+    display: block; }
