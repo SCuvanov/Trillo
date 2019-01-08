@@ -155,14 +155,31 @@ html {
 .navigation-nav {
   list-style: none;
   margin-top: 3.5rem; }
+  .navigation-nav__item {
+    position: relative; }
+    .navigation-nav__item:not(:last-child) {
+      margin-bottom: 0.5rem; }
+  .navigation-nav__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transition: transform 0.2s, width 0.3s cubic-bezier(1, 0, 0, 1) 0.2s; }
+  .navigation-nav__item:hover::before {
+    transform: scaleY(1);
+    width: 100%; }
   .navigation-nav__link:link, .navigation-nav__link:visited {
     text-decoration: none;
     padding: 1rem 3rem;
     display: flex;
     align-items: center;
-    transition: all .2s; }
-    .navigation-nav__link:link:hover, .navigation-nav__link:visited:hover {
-      background-color: var(--color-primary); }
+    transition: all .2s;
+    position: relative;
+    z-index: 100; }
   .navigation-nav__icon {
     height: 2rem;
     width: 2rem;
