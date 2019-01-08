@@ -200,3 +200,55 @@
     }
 
 }
+
+
+/*OVERVIEW*/
+
+.overview {
+    display: flex;
+    height: 7rem;
+
+    border-bottom: 1px solid var(--color-grey-light-2);
+
+    &__heading {
+        font-weight: 300;
+        font-size: 3rem;
+        color: var(--color-grey-dark-3);
+        margin: 2rem 2rem;
+    }
+
+    &__stars {
+        margin-right: auto;
+        display: flex;
+    }
+
+    &__icon-star,
+    &__icon-location {
+        height: 2.25rem;
+        width: 2.25rem;
+        fill: var(--color-primary);
+    }
+
+    &__location {
+        display: flex;
+    }
+
+    &__rating {
+        background-color: var(--color-primary);
+        color: var(--color-grey-light-1);
+        font-size: 1.5rem;
+
+        &-average {}
+
+        &-count {}
+
+    }
+}
+
+.btn-inline {
+    text-decoration: none;
+    border: none;
+    background: none;
+    //padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--color-grey-dark-1);
+}

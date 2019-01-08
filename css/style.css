@@ -205,3 +205,33 @@ html {
   .gallery__photo {
     width: 100%;
     display: block; }
+
+/*OVERVIEW*/
+.overview {
+  display: flex;
+  height: 7rem;
+  border-bottom: 1px solid var(--color-grey-light-2); }
+  .overview__heading {
+    font-weight: 300;
+    font-size: 3rem;
+    color: var(--color-grey-dark-3);
+    margin: 2rem 2rem; }
+  .overview__stars {
+    margin-right: auto;
+    display: flex; }
+  .overview__icon-star, .overview__icon-location {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: var(--color-primary); }
+  .overview__location {
+    display: flex; }
+  .overview__rating {
+    background-color: var(--color-primary);
+    color: var(--color-grey-light-1);
+    font-size: 1.5rem; }
+
+.btn-inline {
+  text-decoration: none;
+  border: none;
+  background: none;
+  border-bottom: 2px solid var(--color-grey-dark-1); }
