@@ -13,7 +13,9 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
-  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3); }
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
+  --border-grey: 1px solid var(--color-grey-light-2);
+  --box-shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.05); }
 
 *,
 *::after,
@@ -48,7 +50,7 @@ html {
 .header {
   height: 7rem;
   background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--border-grey);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,8 +68,26 @@ html {
 
 .hotel-view {
   background-color: var(--color-white);
+  flex: 1; }
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--border-grey); }
+
+.description {
+  font-size: 1.4rem;
+  background-color: var(--color-white);
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  box-shadow: var(--box-shadow-light);
+  padding: 2.5rem; }
+
+.user-reviews {
   flex: 1;
-  height: 80rem; }
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow-light); }
 
 /*LOGO*/
 .logo {
@@ -209,13 +229,17 @@ html {
 /*OVERVIEW*/
 .overview {
   display: flex;
+  align-items: center;
   height: 7rem;
-  border-bottom: 1px solid var(--color-grey-light-2); }
+  font-size: 1.5rem;
+  border-bottom: var(--border-grey); }
   .overview__heading {
     font-weight: 300;
     font-size: 3rem;
     color: var(--color-grey-dark-3);
-    margin: 2rem 2rem; }
+    padding: 1.5rem 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
   .overview__stars {
     margin-right: auto;
     display: flex; }
@@ -223,15 +247,100 @@ html {
     height: 2.25rem;
     width: 2.25rem;
     fill: var(--color-primary); }
+  .overview__icon-location {
+    margin-right: .5rem; }
   .overview__location {
-    display: flex; }
+    display: flex;
+    font-size: 1.2rem;
+    align-items: center; }
   .overview__rating {
     background-color: var(--color-primary);
     color: var(--color-grey-light-1);
-    font-size: 1.5rem; }
+    font-size: inherit;
+    margin-left: 3rem;
+    align-self: stretch;
+    padding: 0.5rem 2.25rem 0 2.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .overview__rating-average {
+      font-size: 2.25rem;
+      font-weight: 300; }
+    .overview__rating-count {
+      font-size: 1.2rem;
+      text-transform: uppercase; }
 
+/*BUTTON*/
 .btn-inline {
+  font-size: inherit;
   text-decoration: none;
   border: none;
   background: none;
-  border-bottom: 2px solid var(--color-grey-dark-1); }
+  color: var(--color-primary);
+  padding-bottom: 2px;
+  border-bottom: 1px solid currentColor;
+  display: inline-block;
+  cursor: pointer;
+  transition: all .2s; }
+  .btn-inline:hover {
+    color: var(--color-grey-dark-1); }
+  .btn-inline:focus {
+    outline: none;
+    animation: pulsate 1s infinite; }
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25); }
+  100% {
+    transform: scale(1);
+    box-shadow: none; } }
+
+/*PARAGRAPH*/
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem; }
+
+/*LIST*/
+.list {
+  border-top: var(--border-grey);
+  border-bottom: var(--border-grey);
+  padding: 2.5rem;
+  margin: 2rem 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; }
+  .list__item {
+    flex: 0 0 50%;
+    margin-bottom: .7rem; }
+  .list__item::before {
+    content: "";
+    display: inline-block;
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: .75rem;
+    /*
+        background-image: url("../../img/chevron-thin-right.svg");
+        background-size: cover;
+        */
+    background-color: var(--color-primary);
+    -webkit-mask-image: url("../../img/chevron-thin-right.svg");
+    -webkit-mask-size: cover; }
+
+/*RECOMMEND*/
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .recommend__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    margin-left: -1.5rem; }

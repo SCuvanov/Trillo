@@ -190,15 +190,12 @@
 .gallery {
     display: flex;
 
-
-
     &__item {}
 
     &__photo {
         width: 100%;
         display: block;
     }
-
 }
 
 
@@ -206,15 +203,19 @@
 
 .overview {
     display: flex;
+    align-items: center;
     height: 7rem;
+    font-size: 1.5rem;
 
-    border-bottom: 1px solid var(--color-grey-light-2);
+    border-bottom: var(--border-grey);
 
     &__heading {
         font-weight: 300;
         font-size: 3rem;
         color: var(--color-grey-dark-3);
-        margin: 2rem 2rem;
+        padding: 1.5rem 3rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     &__stars {
@@ -229,26 +230,145 @@
         fill: var(--color-primary);
     }
 
+    &__icon-location {
+        margin-right: .5rem;
+    }
+
     &__location {
         display: flex;
+        font-size: 1.2rem;
+        align-items: center;
     }
 
     &__rating {
         background-color: var(--color-primary);
         color: var(--color-grey-light-1);
-        font-size: 1.5rem;
+        font-size: inherit;
+        margin-left: 3rem;
+        align-self: stretch;
+        padding: 0.5rem 2.25rem 0 2.25rem;
 
-        &-average {}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-        &-count {}
+        &-average {
+            font-size: 2.25rem;
+            font-weight: 300;
+        }
+
+        &-count {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
 
     }
 }
 
+/*BUTTON*/
 .btn-inline {
+    font-size: inherit;
     text-decoration: none;
     border: none;
     background: none;
-    //padding-bottom: 0.25rem;
-    border-bottom: 2px solid var(--color-grey-dark-1);
+    color: var(--color-primary);
+    padding-bottom: 2px;
+    border-bottom: 1px solid currentColor;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        color: var(--color-grey-dark-1);
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba($color: #000000, $alpha: 0.25);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
+
+/*PARAGRAPH*/
+.paragraph:not(:last-of-type) {
+    margin-bottom: 2rem;
+}
+
+
+/*LIST*/
+
+.list {
+    border-top: var(--border-grey);
+    border-bottom: var(--border-grey);
+    padding: 2.5rem;
+    margin: 2rem 0;
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        flex: 0 0 50%;
+        margin-bottom: .7rem;
+    }
+
+    &__item::before {
+        content: "";
+        display: inline-block;
+        height: 1.2rem;
+        width: 1.2rem;
+        margin-right: .75rem;
+
+
+        //Older Browsers
+        /*
+        background-image: url("../../img/chevron-thin-right.svg");
+        background-size: cover;
+        */
+
+        //New Browsers
+        background-color: var(--color-primary);
+        -webkit-mask-image: url("../../img/chevron-thin-right.svg");
+        -webkit-mask-size: cover;
+    }
+}
+
+
+/*RECOMMEND*/
+.recommend {
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__count {}
+
+    &__friends {}
+
+    &__photo {
+        box-sizing: content-box;
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid var(--color-white);
+        margin-left: -1.5rem;
+    }
 }
