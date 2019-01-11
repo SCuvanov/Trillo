@@ -5,6 +5,11 @@
     margin: 8rem auto;
     background-color: var(--color-grey-light-1);
     box-shadow: var(--shadow-dark);
+
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        max-width: 100%;
+    }
 }
 
 .header {
@@ -37,6 +42,7 @@
 }
 
 .detail {
+    font-size: 1.4rem;
     display: flex;
     padding: 4.5rem;
     background-color: var(--color-grey-light-1);
@@ -44,7 +50,7 @@
 }
 
 .description {
-    font-size: 1.4rem;
+    font-size: inherit;
     background-color: var(--color-white);
     flex: 0 0 60%;
     margin-right: 4.5rem;
@@ -54,6 +60,8 @@
 
 .user-reviews {
     flex: 1;
-    background-color: var(--color-white);
-    box-shadow: var(--box-shadow-light);
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
