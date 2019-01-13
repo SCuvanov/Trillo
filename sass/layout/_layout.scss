@@ -1,5 +1,4 @@
 .container {
-    //max-width: 120rem;
     max-width: 95%;
     min-height: 50rem;
     margin: 8rem auto;
@@ -22,10 +21,20 @@
     align-items: center;
 
     font-size: 1.4rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap;
+        height: 11rem;
+        align-content: space-around;
+    }
 }
 
 .content {
     display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
 }
 
 .navigation {
@@ -47,6 +56,14 @@
     padding: 4.5rem;
     background-color: var(--color-grey-light-1);
     border-bottom: var(--border-grey);
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
 }
 
 .description {
@@ -56,6 +73,16 @@
     margin-right: 4.5rem;
     box-shadow: var(--box-shadow-light);
     padding: 2.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
 }
 
 .user-reviews {
